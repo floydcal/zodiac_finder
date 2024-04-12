@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import inquirer from "inquirer";
 async function main() {
     let birthDay = await inquirer.prompt([
@@ -11,7 +12,6 @@ async function main() {
             message: "Please enter your birth day (1-31):"
         }
     ]);
-    // Parse the input strings into integers
     const month = parseInt(birthDay.month);
     const day = parseInt(birthDay.day);
     function getZodiacSign(month, day) {
@@ -28,7 +28,7 @@ async function main() {
             "Libra",
             "Scorpio",
             "Sagittarius",
-            "Capricorn" // Capricorn again for December 22 - 31
+            "Capricorn"
         ];
         const cutoffDates = [
             20,
@@ -44,7 +44,7 @@ async function main() {
             21,
             21, // December
         ];
-        month -= 1; // Adjust for 0-based index
+        month -= 1;
         if (day <= cutoffDates[month]) {
             return zodiacSigns[month];
         }

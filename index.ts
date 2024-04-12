@@ -14,8 +14,7 @@ async function main() {
         }
     ]);
 
-    // Parse the input strings into integers
-    const month = parseInt(birthDay.month);
+        const month = parseInt(birthDay.month);
     const day = parseInt(birthDay.day);
 
     function getZodiacSign(month: number, day: number): string {
@@ -32,7 +31,7 @@ async function main() {
             "Libra",
             "Scorpio",
             "Sagittarius",
-            "Capricorn" // Capricorn again for December 22 - 31
+            "Capricorn" 
         ];
 
         const cutoffDates: number[] = [
@@ -50,7 +49,7 @@ async function main() {
             21, // December
         ];
 
-        month -= 1; // Adjust for 0-based index
+        month -= 1; 
 
         if (day <= cutoffDates[month]) {
             return zodiacSigns[month];
